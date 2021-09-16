@@ -7,10 +7,10 @@ class NonBinaryMatch:
         self.value = value
 
 class NonBinaryUnit:
-    def __init__(self, u_radius, sensor_field_radius, etalon, dx, dy):
-        self.u_radius = u_radius
-        self.sensor_field_radius = sensor_field_radius
-        self.etalon = etalon
+    def __init__(self, etalon_pic, x, y, sens_rad, u_rad, dx, dy):
+        self.u_radius = u_rad
+        self.sensor_field_radius = sens_rad
+        self.etalon = make_measurement(etalon_pic,x,y,sens_rad)
         self.dx = dx
         self.dy = dy
 
