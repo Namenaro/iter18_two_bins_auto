@@ -1,4 +1,6 @@
 from sensors import *
+from utils import *
+from sampling import *
 
 class NonBinaryMatch:
     def __init__(self,x,y,value):
@@ -13,6 +15,9 @@ class NonBinaryUnit:
         self.etalon = make_measurement(etalon_pic,x,y,sens_rad)
         self.dx = dx
         self.dy = dy
+
+        self.bins = None  # для безусловных предсказаний результата этого правления
+        self.probs = None
 
     def apply(self, pic, x, y):
         X, Y = get_coords_less_or_eq_raduis(x + self.dx, y + self.dy, self.u_radius)
