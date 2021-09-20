@@ -18,7 +18,7 @@ class BinaryUnit:
         matches = []
         expected_x = x + self.dx
         expected_y = y + self.dy
-        for r in range(0, self.u_radius + 1):
+        for r in range(0, self.u_rad + 1):
             X, Y = get_coords_for_radius(expected_x, expected_y, r)
             for i in range(len(X)):
                 mean = make_measurement(pic, X[i], Y[i], self.sens_rad)

@@ -20,7 +20,7 @@ class World3:
                 return results
             pic = select_random_pic(pics)
             x, y = select_random_xoord_on_pic(pic)
-            if condition is None or condition(pic, x, y) > 0:
+            if condition is None or condition.apply2(pic, x, y) > 0:
                 res = control.apply2(pic, x, y)
                 results.append(res)
         return results

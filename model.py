@@ -7,3 +7,4 @@ class Model:
     def sample(self, sample_size, nbins):
         probs, bins = get_hist(self.train_sample, nbins)
         return sample_from_hist(probs, bins, sample_size)
+
